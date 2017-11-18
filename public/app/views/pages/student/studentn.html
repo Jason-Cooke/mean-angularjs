@@ -1,0 +1,120 @@
+<div>
+	<div class="container-fluid bg-success btn-lg" style="color: #fff; border-radius: 0px;">
+		<h2>
+			<i class="fa fa-user-plus"></i>Create Student Profile</h2>
+	</div>
+	<form class="container" style="padding-top: 12px;" ng-submit="student.saveStudent()" name="studentForm" novalidate>
+
+		<!-- Different width cols, same on all screen sizes -->
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label>First Name</label>
+				<input type="text" class="form-control" ng-model="studentForm.studentData.firstname" name="firstName" autofocus required>
+				<div style="color: red;" ng-show="studentForm.firstName.$dirty && studentForm.firstName.$invalid">
+					<small ng-show="studentForm.firstName.$error.required">First Name is required.</small>
+				</div>
+			</div>
+			<div class="form-group col-md-4">
+				<label>Last Name</label>
+				<input type="text" class="form-control" ng-model="student.studentData.lastname" name="lastName" required>
+				<div style="color: red;" ng-show="studentForm.lastName.$dirty && studentForm.lastName.$invalid">
+					<small ng-show="studentForm.lastName.$error.required">Last Name is required.</small>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label>Date of birth</label>
+				<input type="Date" class="form-control" ng-model="student.studentData.dob" style="max-height: 35px;" name="dOb" required>
+				<div style="color: red;" ng-show="studentForm.dOb.$dirty && studentForm.dOb.$invalid">
+					<small ng-show="studentForm.dOb.$error.required">Date of birth is required.</small>
+				</div>
+			</div>
+			<div class="form-group col-md-2">
+				<label>Class</label>
+				<input type="text" placeholder="Eg. JSS1" maxlength="4" class="form-control" ng-model="student.studentData.level" name="level"
+				 required>
+				<div style="color: red;" ng-show="studentForm.level.$dirty && studentForm.level.$invalid">
+					<small ng-show="studentForm.level.$error.required">Student class is required.</small>
+				</div>
+			</div>
+			<div class="form-group col-md-2">
+				<label>Gender</label>
+				<br/>
+				<select class="form-control custom-select" ng-model="student.studentData.gender" name="gender" required>
+					<option selected disabled>--Select--</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+				<div style="color: red;" ng-show="studentForm.gender.$dirty && studentForm.gender.$invalid">
+					<small ng-show="studentForm.gender.$error.required">Please select one.</small>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label>Mobile No</label>
+				<input type="number" class="form-control" maxlength="11" placeholder="Eg. 08023456789" ng-model="student.studentData.mobile">
+			</div>
+			<div class="form-group col-md-2">
+				<label>City</label>
+				<input type="text" class="form-control" ng-model="student.studentData.city" name="city" required>
+				<div style="color: red;" ng-show="studentForm.city.$dirty && studentForm.city.$invalid">
+					<small ng-show="studentForm.city.$error.required">Please provide a valid city.</small>
+				</div>
+			</div>
+			<div class="form-group col-md-2">
+				<label>State</label>
+				<select class="form-control custom-select" ng-model="student.studentData.state" name="state" required>
+					<option selected disabled>-Select State-</option>
+					<option value="Abia">Abia</option>
+					<option value="Anambra">Anambra</option>
+					<option value="Enugu">Enugu</option>
+					<option value="Imo">Imo</option>
+				</select>
+				<div style="color: red;" ng-show="studentForm.state.$dirty && studentForm.state.$invalid">
+					<small ng-show="studentForm.state.$error.required">Please select a valid state.</small>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div class="form-group col-md-3">
+				<label>Parents Name</label>
+				<input type="text" class="form-control" ng-model="student.studentData.parentsname" name="parentsn" required>
+				<div style="color: red;" ng-show="studentForm.parentsn.$dirty && studentForm.parentsn.$invalid">
+					<small ng-show="studentForm.parentsn.$error.required">Please provide a valid Name.</small>
+				</div>
+			</div>
+			<div class="form-group col-md-2">
+				<label>Parents Mobile No</label>
+				<input type="number" class="form-control" ng-model="student.studentData.parentsnumber" name="parentsm" required>
+				<div style="color: red;" ng-show="studentForm.parentsm.$dirty && studentForm.parentsm.$invalid">
+					<small ng-show="studentForm.parentsm.$error.required">Valid Number is required.</small>
+				</div>
+			</div>
+			<div class="form-group col-md-3">
+				<label>Address</label>
+				<input type="text" class="form-control" maxlength="60" ng-model="student.studentData.address" name="address" required>
+				<div style="color: red;" ng-show="studentForm.address.$dirty && studentForm.address.$invalid">
+					<small ng-show="studentForm.address.$error.required">Please provide a valid Address.</small>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row">
+			<button ng-disabled="studentForm.firstName.$dirty && studentForm.firstName.$invalid || studentForm.lastName.$dirty && studentForm.lastName.$invalid || studentForm.dOb.$dirty && studentForm.dOb.$invalid || studentForm.level.$dirty && studentForm.level.$invalid || studentForm.gender.$dirty && studentForm.gender.$invalid || studentForm.city.$dirty && studentForm.city.$invalid || studentForm.state.$dirty && studentForm.state.$invalid || studentForm.parentsn.$dirty && studentForm.parentsn.$invalid || studentForm.parentsm.$dirty && studentForm.parentsm.$invalid || studentForm.address.$dirty && studentForm.address.$invalid"
+			 class="btn btn-info btn-lg active" type="submit">
+				<span ng-if="!student.processing">Create Profile</span>
+				<span ng-if="student.processing">
+					<i class="fa fa-refresh fa-pulse fa-fw"></i>
+				</span>
+			</button>
+			<br />
+			<br />
+		</div>
+
+	</form>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+	<div class="card bg-light row1" style="max-width: 350px; max-height: 500px;  padding-top: 20px; margin-top: 100px;">
+		<div class="card-body">
+			<img class="img1" src="assets/img/logo.png" alt="logo.png">
+
+			<br/>
+			<br/>
+			<form ng-submit="login.doLogin()">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="fa fa-user fa-fw"></i>
+						</span>
+						<input type="text" class="form-control" ng-model="login.loginData.username" placeholder="Username" autofocus required>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="fa fa-key fa-fw"></i>
+						</span>
+						<input type="password" class="form-control" placeholder="Password" ng-model="login.loginData.password" required>
+					</div>
+				</div>
+				<div class="alert alert-danger" ng-if="login.error" style="font-size: 12px; text-align: center;">
+					{{ login.error }}
+				</div>
+				<button type="submit" class="btn btn-lg btn-block btn-primary">
+					<span ng-if="!login.processing">Sign in</span>
+					<span ng-if="login.processing">
+						<i class="fa fa-spinner fa-pulse fa-fw"></i>
+						<span class="sr-only"></span>
+					</span>
+				</button>
+
+				<!-- CREATE NEW ACCOUNT -->
+				<div>
+					<span>Do not have account? </span>
+					<a href="/register">
+						<span class="text-danger">register here</span>
+					</a>
+				</div>
+				<br/>
+				<br/>
+			</form>
+		</div>
+
+	</div>
+</div>

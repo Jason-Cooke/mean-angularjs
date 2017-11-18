@@ -1,0 +1,225 @@
+/* 
+
+Created by Emmanuel Nwankwo on 24th Oct, 2017
+
+*/
+
+/***** Main Logo **********/
+.mainLogo {
+	height: 55px;
+}
+
+.mainLogo2 {
+	height: 40px;
+	width: 40px;
+	border-radius: 100%;
+	background-size: 100%;
+}
+/********** End **********/
+
+/*** Top Menu Nav ****/
+.navMenu {
+	border-bottom: none;
+	color: orange;
+}
+
+.navMenu > li > a {
+	padding-right: 6px;
+	padding-left: 6px;
+	border-bottom-right-radius: 4px; 
+	border-bottom-left-radius: 4px;
+}
+/****** End *************/
+
+/****** customNav ********/
+.customNav > li {
+	max-height: 40px;
+	padding: 0px;
+	border-radius: 0px;
+}
+
+.customNav > li:nth-child(even) {
+	border-left: 2px solid red;
+}
+
+.customNav > li > a {
+	color: orange;
+	padding: 2px;
+	text-decoration: none;
+}
+
+ul.customNav {
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 2px;
+	background-color: green;
+}
+/************* End *********************/
+
+/******* HOME ******/
+.studentImg {
+	margin: 0 auto;
+	height: 150px;
+	width: 150px;
+	border-radius: 100%;
+	display: block;
+}
+
+.studentHeader {
+	text-align: center;
+	font-family: tahoma;
+	font-size: 34px;
+	color: rgb(0, 191, 255);
+	font-weight: bold;
+}
+/***** End *******/
+
+/****** DASHBOARD NAV **********/
+.sideNav > a {
+	padding: 5px 15% 5px 15%;
+	font-size: 25px;
+	color: #FF8C00;
+	border-bottom: 1px solid #868e96;
+	font-family: Candara, Verdana;
+}
+
+.sideNav > a:hover {
+	color: #ffc14d;
+	background-color: #708090;
+}
+
+.sideNav > a.top {
+	margin-top: 20px;
+}
+/****** END *********/
+
+/******** Dashboard ******/
+.fcss th {
+	font-family: Verdana, sans-serif, bitter;
+	font-weight: bold;
+	font-size: 26px;
+	color: #708090;
+
+}
+/****** END *********/
+
+/******** Student Profile @studpro ******/
+#textHeader tr th {
+	font-size: 20px;
+	font-family: tahoma, sans-serif, bitter;
+	font-weight: lighter;
+	width: 200px;
+}
+
+#textHeader {
+	border-collapse: collapse;
+}
+
+#textHeader tr td {
+	font-size: 18px;
+	font-weight: lighter;
+}
+/****** END *********/
+
+/* LOGIN AND REGISTRATION LOGO */
+img.img1 {
+	margin: 0 auto;
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;
+	display: block;
+}
+
+.row1 {
+	padding-right: 15px;
+	 padding-left: 15px;
+	 margin-right: auto;
+	 margin-left: auto;
+}
+/****** END *********/
+
+/* @home format */
+.img2 {
+	background-size: 100%;
+	width: 100%;
+	height: 500px;
+	margin-top: 10px;
+
+}
+
+/******* FOOTER *******/
+.footer {
+	background-color: #505962;
+	padding: 60px 0 0 1px;
+	color: white;
+}
+
+.footer > div > div {
+	text-align: center;
+	padding-bottom: 4px;
+}
+
+.footer > div > p > a {
+	color: orange;
+}
+/******* End *********/
+
+/********************************/
+/*      Hero Headers  @home     */
+/********************************/
+.hero {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;    
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }    
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }    
+}
+
+/* NGANIMATE
+====================== */
+
+/* Activate later
+#content-views {
+	position: relative;
+}
+.ng-enter, .ng-leave {
+	width: 100%;
+	position: absolute;
+}
+
+.ng-enter {
+	-webkit-animation:fadeInDown 1.2s both ease-in;
+	-moz-animation:fadeInDown 1.2s both ease-in;
+		animation: fadeInDown 1.2s both ease-in;
+}
+
+.ng-leave {
+	-webkit-animation:fadeOutDown 0.5s both ease-in;
+	-moz-animation:fadeOutDown 0.5ss both ease-in;
+		animation: fadeOutDown 0.5s both ease-in;
+} */
+/******* End *****/

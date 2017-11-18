@@ -1,0 +1,19 @@
+<form ng-submit="">
+	<div class="container card text-center bg-light mb-4" style="width: 25rem; margin-top: 135px; min-height: 300px;">
+		<div class="card-header h2">
+			Result Section
+		</div>
+		<div class="card-body">
+			<h4 class="card-title h4">Please select your name and click view result</h4>
+			<br/>
+			<p class="">
+				<select class="custom-select">
+					<option selected disabled>-Select Your Name-</option>
+					<option value="" ng-repeat="results in result.students">{{ results.lastname}} {{results.firstname}}</option>
+				</select>
+			</p>
+			<br/>
+			<button class="btn btn-lg btn-success" type="submit">View Result</button>
+		</div>
+	</div>
+</form

@@ -1,0 +1,49 @@
+<h2 class="container-fluid btn-info" style="padding: 10px 0 10px 20px;">Student Profile</h2>
+<form class="form-horizontal" style="padding-left: 50px; padding-top: 10px;">
+	<table id="textHeader">
+		<tr>
+			<th>First Name:</th>
+			<td>{{ student.students.firstname }} </td>
+		</tr>
+		<tr>
+			<th>Last Name:</th>
+			<td>{{ student.students.lastname }} </td>
+		</tr>
+		<tr>
+			<th>Age:</th>
+			<td>{{ student.students.dob | date: "mediumDate"}} </td>
+		</tr>
+		<tr>
+			<th>Current Class:</th>
+			<td>{{ student.students.level | uppercase}} </td>
+		</tr>
+		<tr>
+			<th>Gender:</th>
+			<td>{{ student.students.gender }} </td>
+		</tr>
+		<tr>
+			<th>Mobile:</th>
+			<td>{{ student.students.mobile }} </td>
+		</tr>
+		<tr>
+			<th>City:</th>
+			<td>{{ student.students.city }} </td>
+		</tr>
+		<tr>
+			<th>State</th>
+			<td>{{ student.students.state }} </td>
+		</tr>
+		<tr>
+			<th>Parents Name:</th>
+			<td>{{ student.students.parentsname }} </td>
+		</tr>
+		<tr>
+			<th>Parents Mobile:</th>
+			<td>{{ student.students.parentsnumber }} </td>
+		</tr>
+		<tr>
+			<th>Address:</th>
+			<td>{{ student.students.address }} </td>
+		</tr>
+	</table>
+</form>

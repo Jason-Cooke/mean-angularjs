@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ANEROBI INTERNATIONAL COLLEGE</title>
+    <!-- FOR ANGULAR ROUTING -->
+    <base href="/">
+
+</head>
+
+<body ng-app="userApp" ng-controller="mainController as main">
+
+    <header>
+        <!-- Navbar when staff logs out -->
+        <div class="navbar fixed-top navbar-dark bg-dark" ng-hide="main.loggedIn">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand" style="color: orange;">
+                        <img class="mainLogo" src="assets/img/logo1.png" alt="School Logo">
+                    </a>
+                </div>
+                <ul class="nav nav-tabs navMenu">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/result">Student Area</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/login">Staff Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Navbar when staff login -->
+        <div ng-show="main.loggedIn">
+            <div class="w3-container bg-dark fixed-top">
+                <span class="w3-opennav w3-xlarge w3-hide-large float-right navbar-toggler-icon" onclick="w3_open()">☰</span>
+                <div class="row">
+                    <div class="col">
+                        <h2 class="text-warning">
+                            <i class="fa fa-dashboard"></i> Dashboard</h2>
+                    </div>
+                    <div class="col">
+                        <h2 class="text-warning" style="text-align: center;">ANEROBI Staff</h2>
+                    </div>
+                    <!-- dropdown option for the staff -->
+                    <div class="col">
+                        <h2>
+                            <ul class="float-right" style="margin-bottom: 0px;">
+                                <li class="dropdown open" style="list-style-type: none;">
+                                    <button type="button" data-toggle="dropdown" class="btn btn-secondary">
+                                        <i class="fa fa-user fa-fw"></i>{{main.user.username | uppercase}}
+                                        <span class="badge badge-warning">
+                                            <a href="#">
+                                                <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
+                                        </span>
+                                        </a>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li>
+                                            <a href="/users/profile/{{ main.user.username }}" class="dropdown-item">
+                                                <i class="fa fa-user fa-fw"></i> Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="/users/setting" class="dropdown-item">
+                                                <i class="fa fa-gear fa-fw"></i> Settings</a>
+                                        </li>
+                                        <li class="dropdown-divider"></li>
+                                        <li>
+                                            <a href="#" ng-click="main.doLogout()" class="dropdown-item">
+                                                <i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!-- Dashboard sidebar -->
+            <nav class="w3-sidenav w3-collapse bg-dark w3-card-2 w3-animate-left sideNav" style="width:200px;">
+                <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large w3-hide-large">Close &times;</a>
+                <a class="top" href="/users">Student</a>
+                <a href="#">Results</a>
+                <a href="/users/create/student">New Student</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ANGULAR ng-VIEWS -->
+    <!-- Use when the staff logs out -->
+    <div ng-if="!main.loggedIn" ng-view></div>
+    <!-- Use when the staff logs-in and properly format contain for the side bar -->
+    <div style="margin-top: 53.2813px; margin-left:200px" ng-if="main.loggedIn" class="w3-main" ng-view></div>
+
+
+    <!-- load bootstrap and custom CSS via CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="assets/css/w3.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- load angular, angular-route, Jquery, and popper bootstrap.js via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- controllers -->
+    <script src="app/controllers/mainCtrl.js"></script>
+    <script src="app/controllers/userCtrl.js"></script>
+    <!-- services -->
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/userService.js"></script>
+    <!-- app files -->
+    <script src="app/app.routes.js"></script>
+    <script src="app/app.js"></script>
+
+    <!-- Script for the sidebar opening and closing -->
+    <script>
+        function w3_open() {
+            document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+        }
+        function w3_close() {
+            document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

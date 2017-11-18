@@ -1,0 +1,8 @@
+# dependencies
+/node_modules
+
+# local files in /libs
+/public/assets/libs
+
+# index page with files via local
+/public/app/views/index_copy.html

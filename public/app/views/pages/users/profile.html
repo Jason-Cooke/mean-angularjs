@@ -1,0 +1,104 @@
+<form class="form-horizontal" style="padding-left: 40px; padding-top: 20px;">
+	<h3 style="margin-left: -35px; border-bottom: 2px solid gray;">{{main.user.username | uppercase}} profile</h3>
+	<div class="form-row">
+		<div class="form-group col-sm-3">
+			<label class="col-form-label">First Name</label>
+			<p>{{user.users.firstname}}</p>
+		</div>
+		<div class="form-group col-sm-3">
+			<label class="col-form-label">Last Name</label>
+			<p>{{main.users.lastname}}</p>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-sm-3">
+			<label class="col-form-label">Mobile</label>
+			<p>{{main.user.mobile}}</p>
+		</div>
+		<div class="form-group col-sm-3">
+			<label class="col-form-label">Email</label>
+			<p>{{main.user.email}}</p>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-sm-2">
+			<label class="col-form-label">Date of Birthday</label>
+			<p>{{main.user.dob}}</p>
+		</div>
+		<div class="form-group col-sm-2">
+			<label class="col-form-label">Gender</label>
+			<p>{{main.user.gender}}</p>
+		</div>
+		<div class="form-group col-sm-2">
+			<label class="col-form-label">State</label>
+			<p>{{main.user.state}}</p>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-sm-6">
+			<label class="col-form-label">Address</label>
+			<p>{{main.user.address}}</p>
+
+		</div>
+	</div>
+	<h3 style="margin-left: -35px;">Login Information</h3>
+	<div class="form-row">
+		<div class="form-group col-sm-3">
+			<label class="col-form-label">Username</label>
+			<p>{{main.user.username}}</p>
+		</div>
+	</div>
+	<div class="form-row">
+		<button type="" class="btn btn-info">Edit profile</button>
+	</div>
+</form>
+
+
+<!--
+	<div>
+	<h1 ng-if="user.type == 'edit'">{{main.user.username}} Profile</h1>
+
+<form class="form-horizontal" ng-submit="user.saveUser()">
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" value="name" required disabled>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Username</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" placeholder="{{main.user.username}}" ng-value="{{main.user.username}}" ng-model="user.userData.username" required>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Password</label>
+		<div class="col-sm-6">
+			<input type="password" class="form-control" ng-model="user.userData.password" required>
+		</div>
+	</div>
+	
+	<div class="form-group">
+	<div class="col-sm-offset-2 col-sm-6">
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="user.type == 'create'">Create User</button>
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="user.type == 'edit'">Update User</button>
+	</div>
+	</div>
+
+</form>
+
+<div class="row show-hide-message" ng-show="user.message">
+	<div class="col-sm-6 col-sm-offset-2">
+		
+		<div class="alert alert-info">
+			{{ user.message }}
+		</div>
+
+	</div>
+</div>
+
+</div>
+-->

@@ -1,0 +1,122 @@
+<!-- Staff Registration -->
+<div class="bg-light">
+
+	<form class="container" ng-submit="user.saveUser()" name="staffForm" style="padding-top: 110px;" novalidate>
+		<h3 style="margin-left: 200px" class="h2">Personal Information</h3>
+		<div class="form-row justify-content-md-center">
+			<div class="form-group col-sm-3">
+				<label class="col-form-label">First Name</label>
+				<input type="text" class="form-control" placeholder="First Name" ng-model="user.userData.firstname" name="firstName" autofocus
+				 required>
+				<div style="color: red;" ng-show="staffForm.firstName.$dirty && staffForm.firstName.$invalid">
+					<small ng-show="staffForm.firstName.$error.required">First Name is required.</small>
+				</div>
+			</div>
+			<div class="form-group col-sm-3">
+				<label class="col-form-label">Last Name</label>
+				<input type="text" class="form-control" placeholder="Last Name" ng-model="user.userData.lastname" name="lastName" required>
+				<div style="color: red;" ng-show="staffForm.lastName.$dirty && staffForm.lastName.$invalid">
+					<small ng-show="staffForm.lastName.$error.required">Last Name is required.</small>
+				</div>
+			</div>
+		</div>
+		<div class="form-row justify-content-md-center">
+			<div class="form-group col-sm-2">
+				<label class="col-form-label">Mobile</label>
+				<input type="number" class="form-control" ng-model="user.userData.mobile" placeholder="Eg. 08062123465" name="mobile" required>
+				<div style="color: red;" ng-show="staffForm.mobile.$dirty && staffForm.mobile.$invalid">
+					<small ng-show="staffForm.mobile.$error.required">Valid number is required.</small>
+				</div>
+			</div>
+			<div class="form-group col-sm-2">
+				<label class="col-form-label">Email</label>
+				<input type="email" class="form-control" placeholder="Email" ng-model="user.userData.email" name="email" required>
+				<div style="color: red;" ng-show="staffForm.email.$dirty && staffForm.email.$invalid">
+					<small ng-show="staffForm.email.$error.required">Please provide a valid email.</small>
+				</div>
+			</div>
+			<div class="form-group col-sm-2">
+				<label class="col-form-label">Class to teach</label>
+				<input type="text" class="form-control" placeholder="Eg. SS1" maxlength="3" ng-model="user.userData.tclass" name="tClass"
+				 required>
+				<div style="color: red;" ng-show="staffForm.tClass.$dirty && staffForm.tClass.$invalid">
+					<small ng-show="staffForm.tClass.$error.required">Please provide a valid class.</small>
+				</div>
+			</div>
+		</div>
+		<div class="form-row justify-content-md-center">
+			<div class="form-group col-sm-2">
+				<label class="col-form-label">Date of Birth</label>
+				<input type="Date" class="form-control" style="max-height: 35px;" ng-model="user.userData.dob" name="dOb" required>
+				<div style="color: red;" ng-show="staffForm.dOb.$dirty && staffForm.dOb.$invalid">
+					<small ng-show="staffForm.dOb.$error.required">Date of birth is required.</small>
+				</div>
+			</div>
+			<div class="form-group col-sm-2">
+				<label class="col-form-label">Gender</label>
+				<select class="form-control custom-select" ng-model="user.userData.gender" name="gender" required>
+					<option selected disabled>--Select--</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+				<div style="color: red;" ng-show="staffForm.gender.$dirty && staffForm.gender.$invalid">
+					<small ng-show="staffForm.gender.$error.required">Please select one.</small>
+				</div>
+			</div>
+			<div class="form-group col-sm-2">
+				<label class="col-form-label">State</label>
+				<select class="form-control custom-select" ng-model="user.userData.state" name="state" required>
+					<option selected disabled>-Select State-</option>
+					<option value="Abia">Abia</option>
+					<option value="Anambra">Anambra</option>
+					<option value="Enugu">Enugu</option>
+					<option value="Imo">Imo</option>
+				</select>
+				<div style="color: red;" ng-show="staffForm.state.$dirty && staffForm.state.$invalid">
+					<small ng-show="staffForm.state.$error.required">Please select a valid state.</small>
+				</div>
+			</div>
+		</div>
+		<div class="form-row justify-content-md-center">
+			<div class="form-group col-sm-6">
+				<label class="col-form-label">Address</label>
+				<textarea class="form-control" placeholder="Enter Address" maxlength="100" style="max-height: 53px;" ng-model="user.userData.address"
+				 name="address" required></textarea>
+				<div style="color: red;" ng-show="staffForm.address.$dirty && staffForm.address.$invalid">
+					<small ng-show="staffForm.address.$error.required">Please provide a valid address.</small>
+				</div>
+			</div>
+		</div>
+		<h3 style="margin-left: 200px" class="h2">Login Information</h3>
+		<div class="form-row justify-content-md-center">
+			<div class="form-group col-sm-3">
+				<label class="col-form-label">Username</label>
+				<input type="text" class="form-control" placeholder="Username" ng-model="user.userData.username" name="userName" maxlength="14"
+				 required>
+				<div style="color: red;" ng-show="staffForm.userName.$dirty && staffForm.userName.$invalid">
+					<small ng-show="staffForm.userName.$error.required">Username cannot be empty.</small>
+				</div>
+			</div>
+			<div class="form-group col-sm-3">
+				<label class="col-form-label">Password</label>
+				<input type="password" class="form-control" placeholder="Password" ng-model="user.userData.password" name="passWord" required>
+				<div style="color: red;" ng-show="staffForm.passWord.$dirty && staffForm.passWord.$invalid">
+					<small ng-show="staffForm.passWord.$error.required">Please provide a valid password.</small>
+				</div>
+			</div>
+		</div>
+		<div class="form-row justify-content-md-center">
+			<button type="submit" class="btn btn-success" ng-disabled="staffForm.firstName.$dirty && staffForm.firstName.$invalid || staffForm.lastName.$dirty && staffForm.lastName.$invalid || staffForm.mobile.$dirty && staffForm.mobile.$invalid || staffForm.email.$dirty && staffForm.email.$invalid || staffForm.tClass.$dirty && staffForm.tClass.$invalid || staffForm.dOb.$dirty && staffForm.dOb.$invalid || staffForm.gender.$dirty && staffForm.gender.$invalid || staffForm.state.$dirty && staffForm.state.$invalid || staffForm.address.$dirty && staffForm.address.$invalid || staffForm.userName.$dirty && staffForm.userName.$invalid || staffForm.passWord.$dirty && staffForm.passWord.$invalid">
+				<span ng-if="!user.processing">Create Account</span>
+				<span ng-if="user.processing">
+					<i class="fa fa-spinner fa-pulse fa-fw"></i>
+					<span class="sr-only"></span>
+				</span>
+			</button>
+		</div>
+		<br />
+		<br />
+		<br />
+	</form>
+
+</div>
