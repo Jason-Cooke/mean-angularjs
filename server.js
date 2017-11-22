@@ -42,9 +42,6 @@ if (process.env.DEV_ENV) {
 app.use(express.static(__dirname + '/public'));
 
 
-// ROUTES FOR APP API
-// ==================================
-
 // API ROUTES ----------------------------
 var apiRoutes = require('./app/routes/api')(app, express); // get api
 app.use('/api', apiRoutes); // check
