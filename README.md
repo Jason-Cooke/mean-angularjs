@@ -1,9 +1,9 @@
-<h1>MEAN-angularjs</h1>
-<h2>Single Page Application</h2>
+# MEAN-angularjs
+## Single Page Application
 
-<p>This is my first SPA test-project using MEAN-STACK components (angularjs-1.6.6 precisely). The backend consist of 
-  <code>API</code> with <code>jsonwebtoken</code>
-<pre>
+This is my first SPA test-project using MEAN-STACK components (angularjs-1.6.6 precisely). The backend consist of 
+  `API` with `jsonwebtoken`
+```
 var bodyParser = require('body-parser'); 
 var User       = require('../models/user');
 var Student    = require('../models/student');
@@ -14,9 +14,9 @@ var config     = require('../../config');
 var hiddenSecret = config.secret;
 
 continue on app/routes/api.js
-</pre>
-<code>User Schema</code>
-<pre>
+```
+**User Schema**
+```
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 var bcrypt 		 = require('bcrypt-nodejs');
@@ -63,9 +63,9 @@ UserSchema.methods.comparePassword = function(password) {
 
 
 module.exports = mongoose.model('User', UserSchema);
-</pre>
-<code>Student Schema</code>
-<pre>
+```
+**Student Schema**
+```
   var mongoose     = require('mongoose');
   var Schema       = mongoose.Schema;
   
@@ -89,16 +89,21 @@ module.exports = mongoose.model('User', UserSchema);
   });
   
   module.exports = mongoose.model('Student', StudentSchema);
-</pre>
-<h2>Usage</h2>
-<p>Download or clone the project</p>
-<p>Install the dependencies using <code>npm install</code> and start the server by running <code>node server</code> in the terminal. Open your browser on <code>http://localhost:3000</code></p>
-<p>With lots of work on both the backend and frontend view, I will call it a shot here to move on with latest <a href=http://angular.io> <b>angular</b></a> (v5.x as of the time this was written).</p> 
-<p><b>Note: </b>The frontend design view was not awesomely designed as it was not the focus of this project, however I used some bootstrap and fontawesome to tweaks some views.</p>
-<p>Known issues include,
-  <ul>
-  <li>Unable to delete user(staff) profile from the frontend though it works perfectly from the backend</li>
-  <li>You may experience browser freezing while trying to get a user profile details when logged-in</li>
-  </ul>
-  <i>*The project is still opening for reveiw and corrections</i>
-</p>
+```
+
+## Installation
+1. Download the repository
+2. Install npm modules: `npm install`
+3. Start up the server: `node server.js`
+4. View in browser at http://localhost:3000
+
+With lots of work on both the backend and frontend view, I will call it a shot here to move on with latest [angular](http://angular.io/) (v5.x as of the time this was written). 
+
+**Note:** The frontend design view was not awesomely designed as it was not the focus of this project, however I used some bootstrap and fontawesome to tweaks some views.
+
+### Known issues include,
+ 
+- Unable to delete user(staff) profile from the frontend though it works perfectly from the backend
+- You may experience browser freezing while trying to get a user profile details when logged-in
+
+*This project is still open for reveiw and corrections*
