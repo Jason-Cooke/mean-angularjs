@@ -106,4 +106,4 @@ With lots of work on both the backend and frontend view, I will call it a shot h
 - Unable to delete user(staff) profile from the frontend though it works perfectly from the backend
 - You may experience browser freezing while trying to get a user profile details when logged-in
 
-*This project is still open for reveiw and corrections*
+*This project is still open for review and corrections*
